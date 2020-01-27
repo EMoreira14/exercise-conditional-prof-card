@@ -10,18 +10,36 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  let myName = "Lucy";
+  if (variables.name != null) myName = variables.name;
+
+  let mylastname = "Boilett";
+  if (variables.lastname != null) mylastname = variables.lastname;
+
+  let city = "Miami";
+  if (variables.city != null) city = variables.city;
+
+  let country = "USA";
+  if (variables.country != null) country = variables.country;
+
+  let role = "Web Developer";
+  if (variables.role != null) role = variables.role;
+
+  let instagram = "";
+  if (variables.instagram != null) instagram = variables.instagram;
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h1>${myName} ${mylastname}</h1>
+          <h2>${role}</h2>
+          <h3>${city}, ${country}</h3>
           <ul class="position-right">
             <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
             <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://instagram.com/${instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
